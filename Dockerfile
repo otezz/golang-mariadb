@@ -1,4 +1,4 @@
-FROM golang:latest
+FROM golang
 ADD setup.sh /setup.sh
 
 ENV MARIADB_VERSION 10.1
