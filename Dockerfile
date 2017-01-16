@@ -13,7 +13,7 @@ RUN \
  /usr/sbin/update-locale LANG=en_US.UTF-8
 
 # Install mariadb
-RUN ["/bin/bash", "-c", "bash /setup.sh"]
+RUN ["/bin/bash", "-c", "bash /setup-mariadb.sh"]
 
 # Install Goose
 RUN go get bitbucket.org/liamstask/goose/cmd/goose
