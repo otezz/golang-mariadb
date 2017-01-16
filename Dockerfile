@@ -1,5 +1,5 @@
 FROM golang
-ADD setup.sh /setup.sh
+ADD setup-mariadb.sh /setup-mariadb.sh
 
 ENV MARIADB_VERSION 10.1
 ENV MYSQL_ROOT_PASSWORD root
@@ -14,6 +14,9 @@ RUN \
 
 # Install mariadb
 RUN ["/bin/bash", "-c", "bash /setup.sh"]
+
+# Install Goose
+RUN go get bitbucket.org/liamstask/goose/cmd/goose
 
 # Clean up
 RUN \
